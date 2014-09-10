@@ -11,12 +11,13 @@ namespace Payroll
         {
             double newpay;
             double federal;
-            string pay = System.Console.ReadLine(); newpay = Convert.ToDouble(pay);
-            System.Console.WriteLine("Enter name: "); string name = System.Console.ReadLine();
-            System.Console.WriteLine(name + "'s hourly pay is: "); 
-            System.Console.WriteLine("The federal widthold is: "+newpay*.15);
-            System.Console.WriteLine("The state witholding is: " + newpay * .05);
-
+            double totalhours;
+            System.Console.Write("Enter name: "); string name = System.Console.ReadLine();
+            System.Console.Write(name + "'s hourly pay is: "); string pay = System.Console.ReadLine(); newpay = Convert.ToDouble(pay);
+            System.Console.Write(name + "'s hours worked: "); string hours = System.Console.ReadLine(); totalhours = Convert.ToDouble(hours);
+            System.Console.WriteLine("\nThe federal widthold is: " + newpay * .15); newpay -= newpay * .15;
+            System.Console.WriteLine("The state witholding is: " + newpay * .05); newpay -= newpay * .05;
+            System.Console.WriteLine("\nYou have earned " + newpay * totalhours + " at " + newpay + " per hour");
         }
     }
 }
